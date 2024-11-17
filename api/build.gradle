@@ -1,5 +1,4 @@
 apply plugin: 'java-library'
-apply plugin: "com.vanniktech.maven.publish"
 
 dependencies {
     api libs.jacksonAnnotations
@@ -7,17 +6,9 @@ dependencies {
     api libs.jtokkit
     compileOnly libs.lombok
     annotationProcessor libs.lombok
-
-    testImplementation libs.jacksonDatabind
-    testImplementation(platform(libs.junitBom))
-    testImplementation('org.junit.jupiter:junit-jupiter')
 }
 
 compileJava {
     sourceCompatibility = '1.8'
     targetCompatibility = '1.8'
-}
-
-test {
-    useJUnitPlatform()
 }

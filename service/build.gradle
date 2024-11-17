@@ -1,5 +1,4 @@
 apply plugin: 'java-library'
-apply plugin: "com.vanniktech.maven.publish"
 
 dependencies {
     api project(":client")
@@ -7,17 +6,9 @@ dependencies {
     implementation libs.retrofitRxJava2
     implementation libs.retrofitJackson
     implementation libs.jacksonJsonSchema
-
-    testImplementation(platform(libs.junitBom))
-    testImplementation 'org.junit.jupiter:junit-jupiter'
-    testImplementation libs.retrofitMock
 }
 
 compileJava {
     sourceCompatibility = '1.8'
     targetCompatibility = '1.8'
-}
-
-test {
-    useJUnitPlatform()
 }
